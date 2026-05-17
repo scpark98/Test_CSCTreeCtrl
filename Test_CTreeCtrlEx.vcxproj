@@ -55,6 +55,12 @@
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
+  <!-- v140_xp toolset 은 $(WindowsSdkDir_71A) (= SDK 7.1A, VS 통합용) 를 기대. standalone Windows SDK 7.1 만 설치된
+       경우 (registry key v7.1) WindowsSdkDir_71A 가 비어 SDKDDKVer.h 못 찾음. v7.1A 없고 v7.1 standalone 만 있으면
+       그쪽 경로로 fallback. v7.1A 가 정상 설치된 머신에선 그대로 사용. -->
+  <PropertyGroup>
+    <WindowsSdkDir_71A Condition="'$(WindowsSdkDir_71A)' == '' AND Exists('$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SDKs\Windows\v7.1@InstallationFolder)')">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SDKs\Windows\v7.1@InstallationFolder)</WindowsSdkDir_71A>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -76,7 +82,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>bin/$(PlatformTarget)/</OutDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\1.Projects_C++;$(WindowsSdk_71A_IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);$(WindowsSDK_IncludePath);D:\1.Projects_C++</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -86,7 +92,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>bin/$(PlatformTarget)/</OutDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\1.Projects_C++;$(WindowsSdk_71A_IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);$(WindowsSDK_IncludePath);D:\1.Projects_C++</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
