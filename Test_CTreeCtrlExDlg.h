@@ -1,4 +1,4 @@
-
+ï»¿
 // Test_CTreeCtrlExDlg.h : header file
 //
 
@@ -24,7 +24,7 @@ public:
 	static bool		check_is_dim_text(CWnd* pWnd, HTREEITEM hItem);
 	void			test_function();
 
-	//ShellÀÇ imagelist ¹× shell°ú °ü°èµÈ ¸â¹ö Á¦°ø
+	//Shellì˜ imagelist ë° shellê³¼ ê´€ê³„ëœ ë©¤ë²„ ì œê³µ
 	CShellImageList		m_ShellImageList;
 
 	enum TIMER_ID

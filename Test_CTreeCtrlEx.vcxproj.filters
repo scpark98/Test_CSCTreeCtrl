@@ -102,6 +102,9 @@
     <ClInclude Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.h">
       <Filter>Common\CSCMenu</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test_CTreeCtrlEx.cpp">
@@ -151,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.cpp">
       <Filter>Common\CSCMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

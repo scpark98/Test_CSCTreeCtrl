@@ -1,4 +1,4 @@
-
+ï»¿
 // Test_CTreeCtrlExDlg.cpp : implementation file
 //
 
@@ -180,18 +180,20 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 	UpdateData(false);
 
 #if 0
-	//Å½»ö±â Æ®¸®·Î µ¿ÀÛ
+	//íƒìƒ‰ê¸° íŠ¸ë¦¬ë¡œ ë™ì‘
 	m_tree.set_as_shell_treectrl(&m_ShellImageList, true);
 	m_tree.select_folder(_T("C:\\"));
 #else
-	//»ç¿ëÀÚ µ¥ÀÌÅÍ Æ®¸®·Î µ¿ÀÛ
+	//ì‚¬ìš©ì ë°ì´í„° íŠ¸ë¦¬ë¡œ ë™ì‘
 	//m_tree.load_from_file(true, _T("tree_item_unicode.txt"));
 	//m_tree.load_from_file(true, _T("tree_item_utf8.txt"));
 
 
-	m_tree.set_imagelist(IDI_EMPTY, IDI_EMPTY, IDI_FLOPPY, IDI_FIXEDDISK, IDI_HARDDISK, IDI_CDROM, IDI_NETWORKPLACE);
+	//load_from_string ì´ img_index = tab_count + 1 ë¡œ ë§¤í•‘í•˜ë¯€ë¡œ index 0 ì€ dummy slot.
+	//index 1 (root level) ë¶€í„° ê°€ì‹œ ì•„ì´ì½˜ â€” ì´ì „ì—” IDI_EMPTY ë¼ root ê°€ íˆ¬ëª… ì•„ì´ì½˜ìœ¼ë¡œ ë³´ì˜€ìŒ.
+	m_tree.set_imagelist(IDI_EMPTY, IDI_NETWORKPLACE, IDI_FLOPPY, IDI_FIXEDDISK, IDI_HARDDISK, IDI_CDROM, IDI_ICON7);
 
-	//³ëµåµéÀÌ Ãß°¡µÇ±â Àü¿¡ °¡»ó root¸¦ Ãß°¡ÇÏ´Â °æ¿ì¿¡ ´ëÇÑ Å×½ºÆ® ÄÚµå
+	//ë…¸ë“œë“¤ì´ ì¶”ê°€ë˜ê¸° ì „ì— ê°€ìƒ rootë¥¼ ì¶”ê°€í•˜ëŠ” ê²½ìš°ì— ëŒ€í•œ í…ŒìŠ¤íŠ¸ ì½”ë“œ
 	//m_tree.set_root_item(_T("root"), 0);
 
 	int image_size = 16;// theApp.GetProfileInt(_T("setting"), _T("image size"), 16);
@@ -207,15 +209,15 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 	12\n\
 		121\n\
 			1211\n\
-				12111\n\
+				12111 ê¸´ í…ìŠ¤íŠ¸ í…ŒìŠ¤íŠ¸ 12111 ê¸´ í…ìŠ¤íŠ¸ í…ŒìŠ¤íŠ¸ 12111 ê¸´ í…ìŠ¤íŠ¸ í…ŒìŠ¤íŠ¸ 12111 ê¸´ í…ìŠ¤íŠ¸ í…ŒìŠ¤íŠ¸ 12111 ê¸´ í…ìŠ¤íŠ¸ í…ŒìŠ¤íŠ¸\n\
 	13\n\
 2\n\
 	21\n\
 		211\n\
-		212ÇÑ±Û\n\
+		212í•œê¸€\n\
 		213English\n\
-		214ªËªÛªóª´\n\
-		214ùÓí®\n\
+		214ã«ã»ã‚“ã”\n\
+		214æ¼¢å­—\n\
 	22\n\
 	23\n\
 		231\n\
@@ -237,11 +239,11 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 	//m_tree.SetItemHeight(24);
 
 	//SetWindowPos( &wndTopMost, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE );
-	//m_tree.find_item(_T("·çÆ®2"), _T("apple"), 1);
+	//m_tree.find_item(_T("ë£¨íŠ¸2"), _T("apple"), 1);
 #endif
 
-	//°¡»ó ·çÆ®°¡ ¾ø´Â »óÅÂ¿¡¼­ ³ëµåµéÀÌ Ãß°¡µÈ ÈÄ¿¡ °¡»ó ·çÆ®¸¦ Ãß°¡ÇÒ °æ¿ì
-	//°¡»ó ·çÆ®¸¦ Ãß°¡ÇÏ°í ±âÁ¸ ³ëµåµéÀ» ¸ğµÎ °¡»ó·çÆ®ÀÇ child·Î ÀÌµ¿½ÃÅ²´Ù.
+	//ê°€ìƒ ë£¨íŠ¸ê°€ ì—†ëŠ” ìƒíƒœì—ì„œ ë…¸ë“œë“¤ì´ ì¶”ê°€ëœ í›„ì— ê°€ìƒ ë£¨íŠ¸ë¥¼ ì¶”ê°€í•  ê²½ìš°
+	//ê°€ìƒ ë£¨íŠ¸ë¥¼ ì¶”ê°€í•˜ê³  ê¸°ì¡´ ë…¸ë“œë“¤ì„ ëª¨ë‘ ê°€ìƒë£¨íŠ¸ì˜ childë¡œ ì´ë™ì‹œí‚¨ë‹¤.
 	//m_tree.set_root_item(_T("root"), IDR_MAINFRAME);
 
 	m_tree.set_use_drag_and_drop();
@@ -391,13 +393,13 @@ void CTest_CTreeCtrlExDlg::OnCbnSelchangeComboColorTheme()
 
 void CTest_CTreeCtrlExDlg::OnBnClickedCheckLine()
 {
-	//m_tree.draw_line_node(m_check_line.GetCheck());
+	m_tree.has_line(m_check_line.GetCheck());
 }
 
 
 void CTest_CTreeCtrlExDlg::OnBnClickedCheckExpand()
 {
-	//m_tree.use_expand_button(m_check_expand.GetCheck());
+	m_tree.use_expand_button(m_check_expand.GetCheck());
 }
 
 
@@ -469,8 +471,8 @@ void CTest_CTreeCtrlExDlg::OnBnClickedCheckImageListLarge()
 	//set_tree_image_list();
 }
 
-//·¹ÀÌºíÀÇ Ã¹ ¼ıÀÚ°¡ È¦¼öÀÌ¸é dim_text·Î Ãâ·ÂÇÏ°Ô ÇÏ´Â Äİ¹éÇÔ¼ö »ùÇÃ
-//staticÀ¸·Î ¼±¾ğµÇ¾ß ÇÑ´Ù.
+//ë ˆì´ë¸”ì˜ ì²« ìˆ«ìê°€ í™€ìˆ˜ì´ë©´ dim_textë¡œ ì¶œë ¥í•˜ê²Œ í•˜ëŠ” ì½œë°±í•¨ìˆ˜ ìƒ˜í”Œ
+//staticìœ¼ë¡œ ì„ ì–¸ë˜ì•¼ í•œë‹¤.
 bool CTest_CTreeCtrlExDlg::check_is_dim_text(CWnd* pWnd, HTREEITEM hItem)
 {
 	if (pWnd == NULL || hItem == NULL)
@@ -486,7 +488,7 @@ bool CTest_CTreeCtrlExDlg::check_is_dim_text(CWnd* pWnd, HTREEITEM hItem)
 
 void CTest_CTreeCtrlExDlg::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: ¿©±â¿¡ ¸Ş½ÃÁö Ã³¸®±â ÄÚµå¸¦ Ãß°¡ ¹×/¶Ç´Â ±âº»°ªÀ» È£ÃâÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ë©”ì‹œì§€ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€ ë°/ë˜ëŠ” ê¸°ë³¸ê°’ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
 	if (nIDEvent == timer_ime_to_native)
 	{
 		KillTimer(timer_ime_to_native);
