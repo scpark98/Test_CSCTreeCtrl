@@ -204,6 +204,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Common\AutoFont.h" />
     <ClInclude Include="..\..\Common\CButton\GdiButton\GdiButton.h" />
+    <ClInclude Include="..\..\Common\CEdit\CSCStaticEdit\SCStaticEdit.h" />
     <ClInclude Include="..\..\Common\CEdit\SCEdit\SCEdit.h" />
     <ClInclude Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.h" />
     <ClInclude Include="..\..\Common\CMenu\CSCMenuBar\SCMenuBar.h" />
@@ -211,6 +212,7 @@
     <ClInclude Include="..\..\Common\colors.h" />
     <ClInclude Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.h" />
     <ClInclude Include="..\..\Common\CTreeCtrl\SCTreeCtrl\SCTreeCtrl.h" />
+    <ClInclude Include="..\..\Common\data_structure\SCParagraph\SCParagraph.h" />
     <ClInclude Include="..\..\Common\Functions.h" />
     <ClInclude Include="..\..\Common\MemoryDC.h" />
     <ClInclude Include="..\..\Common\ResizeCtrl.h" />
@@ -232,6 +234,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\..\Common\CButton\GdiButton\GdiButton.cpp" />
+    <ClCompile Include="..\..\Common\CEdit\CSCStaticEdit\SCStaticEdit.cpp" />
     <ClCompile Include="..\..\Common\CEdit\SCEdit\SCEdit.cpp" />
     <ClCompile Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.cpp" />
     <ClCompile Include="..\..\Common\CMenu\CSCMenuBar\SCMenuBar.cpp" />
@@ -244,6 +247,7 @@
     </ClCompile>
     <ClCompile Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.cpp" />
     <ClCompile Include="..\..\Common\CTreeCtrl\SCTreeCtrl\SCTreeCtrl.cpp" />
+    <ClCompile Include="..\..\Common\data_structure\SCParagraph\SCParagraph.cpp" />
     <ClCompile Include="..\..\Common\Functions.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

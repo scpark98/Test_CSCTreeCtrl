@@ -105,6 +105,12 @@
     <ClInclude Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Common\data_structure\SCParagraph\SCParagraph.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\CEdit\CSCStaticEdit\SCStaticEdit.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test_CTreeCtrlEx.cpp">
@@ -156,6 +162,12 @@
       <Filter>Common\CSCMenu</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\data_structure\SCParagraph\SCParagraph.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\CEdit\CSCStaticEdit\SCStaticEdit.cpp">
       <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
