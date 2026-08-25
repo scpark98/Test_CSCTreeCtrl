@@ -204,6 +204,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Common\AutoFont.h" />
     <ClInclude Include="..\..\Common\CButton\GdiButton\GdiButton.h" />
+    <ClInclude Include="..\..\Common\CDialog\SCShapeDlg\SCShapeDlg.h" />
     <ClInclude Include="..\..\Common\CEdit\CSCStaticEdit\SCStaticEdit.h" />
     <ClInclude Include="..\..\Common\CEdit\SCEdit\SCEdit.h" />
     <ClInclude Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.h" />
@@ -234,6 +235,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\..\Common\CButton\GdiButton\GdiButton.cpp" />
+    <ClCompile Include="..\..\Common\CDialog\SCShapeDlg\SCShapeDlg.cpp" />
     <ClCompile Include="..\..\Common\CEdit\CSCStaticEdit\SCStaticEdit.cpp" />
     <ClCompile Include="..\..\Common\CEdit\SCEdit\SCEdit.cpp" />
     <ClCompile Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.cpp" />
